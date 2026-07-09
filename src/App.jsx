@@ -1,7 +1,7 @@
 import { Box, Separator } from "@chakra-ui/react"
 import { Demo } from "./Components/Demo"
 import Navbar from "./Components/Navbar"
-import Hero from "./Components/Hero"
+import Hero from "./Components/pages/Hero"
 
 function App() {
  
