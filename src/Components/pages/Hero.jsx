@@ -42,7 +42,7 @@ export default function Hero() {
         direction={{ base: "column-reverse", lg: "row" }}
       >
         {/* Left column */}
-        <Stack flex="1" gap={5} align={{ base: "center", lg: "flex-start" }} textAlign={{ base: "center", lg: "left" }}>
+        <Stack flex="1" gap={5} align="flex-start" textAlign="left">
           <Badge
             colorPalette="purple"
             variant="subtle"
@@ -55,30 +55,38 @@ export default function Hero() {
             Frontend Developer
           </Badge>
 
-          <Heading as="h1" fontWeight="500" color="gray.400" fontSize={{ base: "xl", md: "2xl" }}>
+          <Heading
+            as="h1"
+            fontWeight="500"
+            fontSize={{ base: "xl", md: "2xl" }}
+          >
             Hi, I'm
-            <Heading as="span" display="block" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="700" color="white" mt={1}>
-              Kanishk <Box as="span" color="purple.300">Heera</Box>
+            <Heading
+              as="span"
+              display="block"
+              fontSize={{ base: "3xl", md: "5xl" }}
+              fontWeight="700"
+              mt={1}
+            >
+              Kanishk{" "}
+              <Box as="span" color="#823ccc">
+                Heera
+              </Box>
             </Heading>
           </Heading>
 
-          <Text color="purple.300" fontWeight="600" fontSize={{ base: "sm", md: "md" }}>
+          <Text fontWeight="600" fontSize={{ base: "sm", md: "md" }}>
             React Developer &nbsp;|&nbsp; MERN Stack Developer
           </Text>
 
-          <Text color="gray.400" fontSize="sm" maxW="480px">
-            I build beautiful, responsive and user-friendly web applications with modern
-            technologies. Passionate about clean code and creating exceptional digital
-            experiences.
+          <Text fontSize="sm" maxW="480px">
+            I build beautiful, responsive and user-friendly web applications
+            with modern technologies. Passionate about clean code and creating
+            exceptional digital experiences.
           </Text>
 
-          <HStack gap={4} wrap="wrap" justify={{ base: "center", lg: "flex-start" }}>
-            <Button
-              colorPalette="purple"
-              borderRadius="full"
-              px={6}
-              size="lg"
-            >
+          <HStack gap={4} wrap="wrap" justify={"flex-start"}>
+            <Button colorPalette="purple" borderRadius="full" px={6} size="lg">
               <FaPaperPlane /> Hire Me
             </Button>
             <Button
@@ -86,15 +94,18 @@ export default function Hero() {
               borderRadius="full"
               px={6}
               size="lg"
-              borderColor="whiteAlpha.400"
-              color="white"
             >
               <FaDownload /> Download Resume
             </Button>
           </HStack>
 
           <HStack gap={4} pt={2}>
-            <Text fontSize="xs" letterSpacing="wide" textTransform="uppercase" color="gray.500" fontWeight="600">
+            <Text
+              fontSize="xs"
+              letterSpacing="wide"
+              textTransform="uppercase"
+              fontWeight="600"
+            >
               Follow me on
             </Text>
             <HStack gap={2}>
@@ -105,8 +116,6 @@ export default function Hero() {
                   variant="outline"
                   borderRadius="full"
                   size="sm"
-                  borderColor="whiteAlpha.400"
-                  color="gray.300"
                 >
                   {s.icon}
                 </IconButton>
@@ -116,7 +125,12 @@ export default function Hero() {
         </Stack>
 
         {/* Right column - visual */}
-        <Box position="relative" w={{ base: "220px", md: "320px", lg: "420px" }} aspectRatio={1} flexShrink={0}>
+        <Box
+          position="relative"
+          w={{ base: "220px", md: "320px", lg: "420px" }}
+          aspectRatio={1}
+          flexShrink={0}
+        >
           <Circle
             position="absolute"
             inset={0}
@@ -145,13 +159,20 @@ export default function Hero() {
             boxShadow="0 30px 80px -20px rgba(124,58,237,0.5)"
             overflow="hidden"
           >
-              <Image src="https://pbs.twimg.com/profile_images/1974476854229979136/NG8Vb7AL_400x400.jpg"/>
+            <Image src="https://pbs.twimg.com/profile_images/1974476854229979136/NG8Vb7AL_400x400.jpg" />
           </Circle>
 
           <FloatBadge top="10%" left="-4%" color="#61dafb" delay="0.2s">
             <FaReact />
           </FloatBadge>
-          <FloatBadge top="4%" right="-2%" bg="#f7df1e" color="#1a1a1a" delay="1s" fontWeight="800">
+          <FloatBadge
+            top="4%"
+            right="-2%"
+            bg="#f7df1e"
+            color="#1a1a1a"
+            delay="1s"
+            fontWeight="800"
+          >
             JS
           </FloatBadge>
           <FloatBadge bottom="8%" left="-4%" color="#68a063" delay="1.8s">
@@ -167,7 +188,14 @@ export default function Hero() {
 }
 
 // Small helper for the floating tech badges
-function FloatBadge({ children, delay = "0s", bg = "#15151f", color = "white", fontWeight, ...pos }) {
+function FloatBadge({
+  children,
+  delay = "0s",
+  bg = "#15151f",
+  color = "white",
+  fontWeight,
+  ...pos
+}) {
   return (
     <Circle
       position="absolute"

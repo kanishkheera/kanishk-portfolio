@@ -10,6 +10,7 @@ function App() {
       <Navbar/>
       <Separator mx={4}/>
       <Hero/>
+      <Separator mx={4}/>
     </Box>
   )
 }
