@@ -1,13 +1,14 @@
 import { Flex, Link } from "@chakra-ui/react";
 
-export default function NavItems() {
-  const linkItems = [
-    { id: 1, value: "Home" },
-    { id: 2, value: "About" },
-    { id: 3, value: "Projects" },
-    { id: 4, value: "Skills" },
-    { id: 5, value: "Contact" },
-  ];
+const linkItems = [
+  { id: 1, value: "Home" },
+  { id: 2, value: "About" },
+  { id: 3, value: "Projects" },
+  { id: 4, value: "Skills" },
+  { id: 5, value: "Contact" },
+];
+
+export default function NavItems({bottom}) {
   return (
     <>
       {linkItems.map((ele) => (
@@ -22,7 +23,7 @@ export default function NavItems() {
             content: '""',
             position: "absolute",
             left: 0,
-            bottom: "6px",
+            bottom: bottom,
             width: "100%",
             height: "2px",
             bg: "#823ccc",

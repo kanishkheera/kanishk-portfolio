@@ -23,17 +23,20 @@ import {
 } from "./ui/color-mode";
 import { LiaBarsSolid } from "react-icons/lia";
 import NavItems from "./NavItems";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <Box mx={"30px"} h={"55px"} display={"flex"}>
       <Flex w={"100%"} align={"center"} justify={"space-between"}>
-        <Heading fontSize={{base:"28px",md:"34px"}}>
+        <Heading fontSize={{ base: "28px", md: "34px" }}>
           <Span color={"#823ccc"}>K</Span>anishk<Span color={"#823ccc"}>.</Span>
         </Heading>
         <Flex gap={4}>
           <Flex gap={7} display={{ base: "none", md: "flex" }}>
-            <NavItems/>
+            <NavItems bottom={"6px"} />
           </Flex>
           {/* <Button bg={"#823ccc"} color={"white"} p={3} size={"md"}>
             Let's Talk
@@ -54,19 +57,31 @@ export default function Navbar() {
 
             <Portal>
               <Drawer.Backdrop />
-
               <Drawer.Positioner>
-                <Drawer.Content>
+                <Drawer.Content
+                  _open={{
+                    animation:
+                      "slide-from-left-full 400ms cubic-bezier(0.32, 0.72, 0, 1)",
+                  }}
+                  _closed={{
+                    animation:
+                      "slide-to-left-full 350ms cubic-bezier(0.32, 0.72, 0, 1)",
+                  }}
+                >
                   <Drawer.Header>
-                    <Drawer.Title color={"#823ccc"} textDecoration={'underline'}>Menu</Drawer.Title>
+                    <Drawer.Title
+                      color={"#823ccc"}
+                      textDecoration={"underline"}
+                    >
+                      Menu
+                    </Drawer.Title>
                   </Drawer.Header>
                   <Separator mx={2} />
                   <Drawer.Body>
                     <VStack align="start" gap={5}>
-                      <NavItems/>
+                      <NavItems bottom={"0"} />
                     </VStack>
                   </Drawer.Body>
-
                   <Drawer.CloseTrigger asChild>
                     <CloseButton size="sm" />
                   </Drawer.CloseTrigger>
