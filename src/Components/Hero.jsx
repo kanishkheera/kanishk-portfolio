@@ -145,10 +145,6 @@ export default function Hero() {
             boxShadow="0 30px 80px -20px rgba(124,58,237,0.5)"
             overflow="hidden"
           >
-            {/* <svg viewBox="0 0 200 200" fill="none" width="78%" height="78%">
-              <circle cx="100" cy="72" r="34" fill="#4c3a7d" />
-              <path d="M40 190c0-40 26-72 60-72s60 32 60 72" fill="#4c3a7d" />
-            </svg> */}
               <Image src="https://pbs.twimg.com/profile_images/1974476854229979136/NG8Vb7AL_400x400.jpg"/>
           </Circle>
 
