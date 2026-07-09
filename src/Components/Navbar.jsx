@@ -25,7 +25,6 @@ import { LiaBarsSolid } from "react-icons/lia";
 import NavItems from "./NavItems";
 
 export default function Navbar() {
-
   return (
     <Box mx={"30px"} h={"55px"} display={"flex"}>
       <Flex w={"100%"} align={"center"} justify={"space-between"}>
@@ -57,13 +56,15 @@ export default function Navbar() {
               <Drawer.Backdrop />
               <Drawer.Positioner>
                 <Drawer.Content
-                  _open={{
-                    animation:
-                      "slide-from-left-full 400ms cubic-bezier(0.32, 0.72, 0, 1)",
-                  }}
-                  _closed={{
-                    animation:
-                      "slide-to-left-full 350ms cubic-bezier(0.32, 0.72, 0, 1)",
+                  css={{
+                    "&[data-state='open']": {
+                      animation:
+                        "slide-from-left-full 400ms cubic-bezier(0.32, 0.72, 0, 1) !important",
+                    },
+                    "&[data-state='closed']": {
+                      animation:
+                        "slide-to-left-full 350ms cubic-bezier(0.32, 0.72, 0, 1) !important",
+                    },
                   }}
                 >
                   <Drawer.Header>
