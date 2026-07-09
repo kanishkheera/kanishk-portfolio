@@ -23,10 +23,8 @@ import {
 } from "./ui/color-mode";
 import { LiaBarsSolid } from "react-icons/lia";
 import NavItems from "./NavItems";
-import { useState } from "react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
 
   return (
     <Box mx={"30px"} h={"55px"} display={"flex"}>
