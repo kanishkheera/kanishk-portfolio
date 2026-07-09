@@ -22,15 +22,7 @@ import {
   useColorMode,
 } from "./ui/color-mode";
 import { LiaBarsSolid } from "react-icons/lia";
-// import { Drawer } from "@ark-ui/react";
-
-const linkItems = [
-  { id: 1, value: "Home" },
-  { id: 2, value: "About" },
-  { id: 3, value: "Projects" },
-  { id: 4, value: "Skills" },
-  { id: 5, value: "Contact" },
-];
+import NavItems from "./NavItems";
 
 export default function Navbar() {
   return (
@@ -41,37 +33,7 @@ export default function Navbar() {
         </Heading>
         <Flex gap={4}>
           <Flex gap={7} display={{ base: "none", md: "flex" }}>
-            {linkItems.map((ele) => (
-              <Link
-                key={ele.id}
-                position="relative"
-                fontSize="md"
-                fontWeight="medium"
-                textDecoration="none"
-                _hover={{ textDecoration: "none", color: "#823ccc" }}
-                _after={{
-                  content: '""',
-                  position: "absolute",
-                  left: 0,
-                  bottom: "6px",
-                  width: "100%",
-                  height: "2px",
-                  bg: "#823ccc",
-                  transform: "scaleX(0)",
-                  transformOrigin: "left",
-                  transition: "transform 0.3s ease",
-                }}
-                _hover={{
-                  color: "#823ccc",
-                  textDecoration: "none",
-                  _after: {
-                    transform: "scaleX(1)",
-                  },
-                }}
-              >
-                {ele.value}
-              </Link>
-            ))}
+            <NavItems/>
           </Flex>
           {/* <Button bg={"#823ccc"} color={"white"} p={3} size={"md"}>
             Let's Talk
@@ -96,42 +58,12 @@ export default function Navbar() {
               <Drawer.Positioner>
                 <Drawer.Content>
                   <Drawer.Header>
-                    <Drawer.Title>Menu</Drawer.Title>
+                    <Drawer.Title color={"#823ccc"} textDecoration={'underline'}>Menu</Drawer.Title>
                   </Drawer.Header>
                   <Separator mx={2} />
                   <Drawer.Body>
                     <VStack align="start" gap={5}>
-                      {linkItems.map((ele) => (
-                        <Link
-                          key={ele.id}
-                          position="relative"
-                          fontSize="md"
-                          fontWeight="medium"
-                          textDecoration="none"
-                          _hover={{ textDecoration: "none", color: "#823ccc" }}
-                          _after={{
-                            content: '""',
-                            position: "absolute",
-                            left: 0,
-                            bottom: "0",
-                            width: "100%",
-                            height: "2px",
-                            bg: "#823ccc",
-                            transform: "scaleX(0)",
-                            transformOrigin: "left",
-                            transition: "transform 0.3s ease",
-                          }}
-                          _hover={{
-                            color: "#823ccc",
-                            textDecoration: "none",
-                            _after: {
-                              transform: "scaleX(1)",
-                            },
-                          }}
-                        >
-                          {ele.value}
-                        </Link>
-                      ))}
+                      <NavItems/>
                     </VStack>
                   </Drawer.Body>
 
