@@ -56,12 +56,7 @@ export default function Navbar() {
               <Drawer.Backdrop />
               <Drawer.Positioner>
                 <Drawer.Content
-                  css={{
-                    "&[data-state='open']": {
-                      animation: "none",
-                      background: "red",
-                    },
-                  }}
+                 bg="red.500"
                 >
                   <Drawer.Header>
                     <Drawer.Title
