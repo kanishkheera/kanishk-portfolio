@@ -56,7 +56,16 @@ export default function Navbar() {
               <Drawer.Backdrop />
               <Drawer.Positioner>
                 <Drawer.Content
-                 bg="red.500"
+                  css={{
+                    "&[data-state='open']": {
+                      animation:
+                        "slide-from-left-full 400ms cubic-bezier(0.32, 0.72, 0, 1) !important",
+                    },
+                    "&[data-state='closed']": {
+                      animation:
+                        "slide-to-left-full 350ms cubic-bezier(0.32, 0.72, 0, 1) !important",
+                    },
+                  }}
                 >
                   <Drawer.Header>
                     <Drawer.Title
