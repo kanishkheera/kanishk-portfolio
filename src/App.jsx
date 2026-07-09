@@ -1,6 +1,7 @@
 import { Box, Separator } from "@chakra-ui/react"
 import { Demo } from "./Components/Demo"
 import Navbar from "./Components/Navbar"
+import Hero from "./Components/Hero"
 
 function App() {
  
@@ -8,6 +9,7 @@ function App() {
     <Box>
       <Navbar/>
       <Separator mx={4}/>
+      <Hero/>
     </Box>
   )
 }
