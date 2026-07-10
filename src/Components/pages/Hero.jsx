@@ -93,8 +93,10 @@ export default function Hero() {
             React Developer &nbsp;|&nbsp; MERN Stack Developer
           </Text>
 
-          <Text fontSize="sm" >
-            I build beautiful, responsive and user-friendly web applications with modern technologies. Passionate about clean code and creating exceptional digital experiences.
+          <Text fontSize="sm">
+            I build beautiful, responsive and user-friendly web applications
+            with modern technologies. Passionate about clean code and creating
+            exceptional digital experiences.
           </Text>
 
           <HStack gap={4} wrap="wrap" justify={"flex-start"}>
@@ -119,10 +121,20 @@ export default function Hero() {
               {socials.map((s) => (
                 <Link key={s.label} href={s.href} target="blank">
                   <IconButton
-                    aria-label={s.label}
                     variant="outline"
-                    borderRadius="full"
+                    rounded="full"
                     size="sm"
+                    transition="all 0.3s ease"
+                    _hover={{
+                      color: "#823ccc",
+                      borderColor: "#823ccc",
+                      bg: {
+                        base: "purple.50",
+                        _dark: "rgba(130, 60, 204, 0.15)",
+                      },
+                      transform: "translateY(-3px) scale(1.08)",
+                      boxShadow: "0 8px 20px rgba(130,60,204,0.25)",
+                    }}
                   >
                     {s.icon}
                   </IconButton>

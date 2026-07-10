@@ -18,13 +18,14 @@ import {
   FaTwitter,
   FaInstagram,
   FaArrowUp,
+  FaXTwitter,
 } from "react-icons/fa6";
 
 const socialLinks = [
   { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
   { icon: FaGithub, label: "GitHub", href: "#" },
-  { icon: FaTwitter, label: "Twitter", href: "#" },
-  { icon: FaInstagram, label: "Instagram", href: "#" },
+  { icon: FaXTwitter, label: "Twitter", href: "#" },
+  //   { icon: FaInstagram, label: "Instagram", href: "#" },
 ];
 
 const quickLinks = [
@@ -44,22 +45,26 @@ const resourceLinks = [
 const connectLinks = [
   { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
   { icon: FaGithub, label: "GitHub", href: "#" },
-  { icon: FaTwitter, label: "Twitter", href: "#" },
-  { icon: FaInstagram, label: "Instagram", href: "#" },
+  { icon: FaXTwitter, label: "Twitter", href: "#" },
+  //   { icon: FaInstagram, label: "Instagram", href: "#" },
 ];
 
 function FooterLinkList({ title, links }) {
   return (
-    <Stack gap="3" align="flex-start">
+    <Stack
+      gap="3"
+      align={{ base: "center", lg: "flex-start" }}
+      textAlign={{ base: "center", lg: "left" }}
+    >
       <Heading as="h5" size="sm">
         {title}
       </Heading>
-      <Stack gap="2" align="flex-start">
+      <Stack gap="2" align={{ base: "center", lg: "flex-start" }}>
         {links.map((link) => (
           <Link
             key={link.label}
             href={link.href}
-            // _hover={{ color: "white", textDecoration: "none" }}
+            _hover={{ color: "#823ccc", textDecoration: "none" }}
             fontSize="sm"
           >
             {link.icon ? (
@@ -85,16 +90,34 @@ export default function Footer() {
   return (
     <Box as="footer" pt="16" pb="6">
       <Container maxW="1240px">
-        <Grid templateColumns={{ base: "1fr", md: "2fr 1fr 1fr 1fr" }} gap="10">
-          <GridItem>
-            <Stack gap="4" align="flex-start">
+        <Grid
+          templateColumns={{
+            // base: "1fr",
+            base: "repeat(3, 1fr)",
+            lg: "2fr 1fr 1fr 1fr",
+          }}
+          gap="10"
+          m={"auto"}
+        >
+          <GridItem
+            colSpan={{
+            //   base: 1,
+              base: 3,
+              lg: 1,
+            }}
+          >
+            <Stack
+              gap="3"
+              align={{ base: "center", lg: "flex-start" }}
+              textAlign={{ base: "center", lg: "left" }}
+            >
               <Link
                 href="#"
                 fontSize="2xl"
                 fontWeight="bold"
                 _hover={{ textDecoration: "none" }}
               >
-                <Heading fontSize={'28px'}>
+                <Heading fontSize={"28px"}>
                   <Span color={"#823ccc"}>K</Span>anishk
                   <Span color={"#823ccc"}>.</Span>
                 </Heading>
@@ -107,12 +130,22 @@ export default function Footer() {
                 {socialLinks.map((social) => (
                   <IconButton
                     key={social.label}
-                    aria-label={social.label}
                     asChild
+                    aria-label={social.label}
                     variant="outline"
-                    colorPalette="whiteAlpha"
                     rounded="full"
                     size="sm"
+                    transition="all 0.3s ease"
+                    _hover={{
+                      color: "#823ccc",
+                      borderColor: "#823ccc",
+                      bg: {
+                        base: "purple.50",
+                        _dark: "rgba(130, 60, 204, 0.15)",
+                      },
+                      transform: "translateY(-3px) scale(1.08)",
+                      boxShadow: "0 8px 20px rgba(130,60,204,0.25)",
+                    }}
                   >
                     <Link href={social.href}>
                       <social.icon />
