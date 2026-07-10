@@ -26,8 +26,40 @@ import NavItems from "./NavItems";
 
 export default function Navbar() {
   return (
-    <Box mx={"30px"} h={"55px"} display={"flex"}>
-      <Flex w={"100%"} align={"center"} justify={"space-between"}>
+    <Box
+      // px={"30px"}
+      h={"55px"}
+      display={"flex"}
+      position={"sticky"}
+      top={"0px"}
+      zIndex={"999"}
+      bg={{
+        base: "rgba(255,255,255,0.6)",
+        _dark: "rgba(10, 10, 16, 0.72)",
+      }}
+      border={{
+        base: "1px solid rgba(255,255,255,0.2)",
+        _dark: "1px solid rgba(255,255,255,0.08)",
+      }}
+      boxShadow={{
+        base: "sm",
+        _dark: "lg",
+      }}
+      backdropFilter="blur(16px)"
+      WebkitBackdropFilter="blur(20px)"
+      // backdrop-filter: blur(16px) saturate(140%);
+      // border-bottom: 1px solid var(--border);
+    >
+      <Flex
+        w={"100%"}
+        align={"center"}
+        justify={"space-between"}
+        maxW="1240px"
+        mx="auto"
+        px={{ base: 5, md: 8 }}
+        gap={{ base: 9, lg: 16 }}
+        align="center"
+      >
         <Heading fontSize={{ base: "28px", md: "34px" }}>
           <Span color={"#823ccc"}>K</Span>anishk<Span color={"#823ccc"}>.</Span>
         </Heading>
@@ -90,6 +122,7 @@ export default function Navbar() {
           </Drawer.Root>
         </Flex>
       </Flex>
+      {/* <Separator color={'red'}/> */}
     </Box>
   );
 }

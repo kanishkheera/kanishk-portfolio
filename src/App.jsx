@@ -2,15 +2,17 @@ import { Box, Separator } from "@chakra-ui/react"
 import { Demo } from "./Components/Demo"
 import Navbar from "./Components/Navbar"
 import Hero from "./Components/pages/Hero"
+import ProjectsSection from "./Components/pages/ProjectsSection"
+import Footer from "./Components/pages/Footer"
 
 function App() {
  
   return (
     <Box>
       <Navbar/>
-      <Separator mx={4}/>
       <Hero/>
-      <Separator mx={4}/>
+      <ProjectsSection/>
+      <Footer/>
     </Box>
   )
 }

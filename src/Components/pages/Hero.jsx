@@ -10,6 +10,7 @@ import {
   Badge,
   Circle,
   Image,
+  Link,
 } from "@chakra-ui/react";
 import {
   FaPaperPlane,
@@ -22,13 +23,26 @@ import {
   FaNodeJs,
   FaCss3Alt,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Hero() {
   const socials = [
-    { icon: <FaLinkedinIn />, label: "LinkedIn" },
-    { icon: <FaGithub />, label: "GitHub" },
-    { icon: <FaTwitter />, label: "Twitter" },
-    { icon: <FaInstagram />, label: "Instagram" },
+    {
+      icon: <FaLinkedinIn />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/kanishkheera",
+    },
+    {
+      icon: <FaGithub />,
+      label: "GitHub",
+      href: "https://github.com/kanishkheera",
+    },
+    {
+      icon: <FaXTwitter />,
+      label: "Twitter",
+      href: "https://x.com/kanishkheera",
+    },
+    // { icon: <FaInstagram />, label: "Instagram" },
   ];
 
   return (
@@ -39,7 +53,7 @@ export default function Hero() {
         px={{ base: 5, md: 8 }}
         gap={{ base: 9, lg: 16 }}
         align="center"
-        direction={{ base: "column-reverse", lg: "row" }}
+        direction={{ base: "column-reverse", md: "row" }}
       >
         {/* Left column */}
         <Stack flex="1" gap={5} align="flex-start" textAlign="left">
@@ -79,22 +93,15 @@ export default function Hero() {
             React Developer &nbsp;|&nbsp; MERN Stack Developer
           </Text>
 
-          <Text fontSize="sm" maxW="480px">
-            I build beautiful, responsive and user-friendly web applications
-            with modern technologies. Passionate about clean code and creating
-            exceptional digital experiences.
+          <Text fontSize="sm" >
+            I build beautiful, responsive and user-friendly web applications with modern technologies. Passionate about clean code and creating exceptional digital experiences.
           </Text>
 
           <HStack gap={4} wrap="wrap" justify={"flex-start"}>
             <Button colorPalette="purple" borderRadius="full" px={6} size="lg">
               <FaPaperPlane /> Hire Me
             </Button>
-            <Button
-              variant="outline"
-              borderRadius="full"
-              px={6}
-              size="lg"
-            >
+            <Button variant="outline" borderRadius="full" px={6} size="lg">
               <FaDownload /> Download Resume
             </Button>
           </HStack>
@@ -110,15 +117,16 @@ export default function Hero() {
             </Text>
             <HStack gap={2}>
               {socials.map((s) => (
-                <IconButton
-                  key={s.label}
-                  aria-label={s.label}
-                  variant="outline"
-                  borderRadius="full"
-                  size="sm"
-                >
-                  {s.icon}
-                </IconButton>
+                <Link key={s.label} href={s.href} target="blank">
+                  <IconButton
+                    aria-label={s.label}
+                    variant="outline"
+                    borderRadius="full"
+                    size="sm"
+                  >
+                    {s.icon}
+                  </IconButton>
+                </Link>
               ))}
             </HStack>
           </HStack>

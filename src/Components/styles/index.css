@@ -2,3 +2,12 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
+
+  /* background ambient glow */
+  body::before{
+    content:"";
+    position:fixed; top:-200px; left:50%; transform:translateX(-50%);
+    width:900px; height:900px;
+    background:radial-gradient(circle, rgba(124,58,237,0.16) 0%, rgba(124,58,237,0) 65%);
+    pointer-events:none; z-index:0;
+  }
