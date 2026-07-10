@@ -22,9 +22,9 @@ import {
 } from "react-icons/fa6";
 
 const socialLinks = [
-  { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
-  { icon: FaGithub, label: "GitHub", href: "#" },
-  { icon: FaXTwitter, label: "Twitter", href: "#" },
+  { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/kanishkheera" },
+  { icon: FaGithub, label: "GitHub", href: "https://github.com/kanishkheera" },
+  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/kanishkheera" },
   //   { icon: FaInstagram, label: "Instagram", href: "#" },
 ];
 
@@ -43,9 +43,9 @@ const resourceLinks = [
 ];
 
 const connectLinks = [
-  { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
-  { icon: FaGithub, label: "GitHub", href: "#" },
-  { icon: FaXTwitter, label: "Twitter", href: "#" },
+  { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/kanishkheera" },
+  { icon: FaGithub, label: "GitHub", href: "https://github.com/kanishkheera" },
+  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/kanishkheera" },
   //   { icon: FaInstagram, label: "Instagram", href: "#" },
 ];
 
@@ -177,6 +177,7 @@ export default function Footer() {
             aria-label="Back to top"
             onClick={scrollToTop}
             variant="solid"
+            color={'white'}
             bg="#823ccc"
             rounded="full"
             size="sm"
