@@ -14,8 +14,8 @@ export default function NavItems({ bottom, onNavigate }) {
     const el = document.getElementById(target);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", `#${target}`); // 👈 added here
     }
-    // useful if this is inside a mobile drawer you want to auto-close
     if (onNavigate) onNavigate();
   };
 

@@ -1,33 +1,25 @@
 import {
   Box,
-  Button,
   CloseButton,
   Drawer,
   Flex,
   Heading,
-  HStack,
   Icon,
-  Link,
   Portal,
   Separator,
   Span,
-  Stack,
-  Text,
   VStack,
 } from "@chakra-ui/react";
-import { Mode } from "./Mode";
-import {
-  ColorModeButton,
-  useColorModeValue,
-  useColorMode,
-} from "./ui/color-mode";
+import { useState } from "react";
+import { ColorModeButton } from "./ui/color-mode";
 import { LiaBarsSolid } from "react-icons/lia";
 import NavItems from "./NavItems";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <Box
-      // px={"30px"}
       h={"55px"}
       display={"flex"}
       position={"sticky"}
@@ -47,18 +39,15 @@ export default function Navbar() {
       }}
       backdropFilter="blur(16px)"
       WebkitBackdropFilter="blur(20px)"
-      // backdrop-filter: blur(16px) saturate(140%);
-      // border-bottom: 1px solid var(--border);
     >
       <Flex
         w={"100%"}
-        align={"center"}
         justify={"space-between"}
+        align="center"
         maxW="1240px"
         mx="auto"
         px={{ base: 5, md: 8 }}
         gap={{ base: 9, lg: 16 }}
-        align="center"
       >
         <Heading fontSize={{ base: "28px", md: "34px" }}>
           <Span color={"#823ccc"}>K</Span>anishk<Span color={"#823ccc"}>.</Span>
@@ -67,11 +56,13 @@ export default function Navbar() {
           <Flex gap={7} display={{ base: "none", md: "flex" }}>
             <NavItems bottom={"6px"} />
           </Flex>
-          {/* <Button bg={"#823ccc"} color={"white"} p={3} size={"md"}>
-            Let's Talk
-          </Button> */}
           <ColorModeButton />
-          <Drawer.Root placement="right">
+
+          <Drawer.Root
+            placement="right"
+            open={open}
+            onOpenChange={(e) => setOpen(e.open)}
+          >
             <Drawer.Trigger asChild>
               <Icon
                 boxSize={6}
@@ -100,17 +91,14 @@ export default function Navbar() {
                   }}
                 >
                   <Drawer.Header>
-                    <Drawer.Title
-                      color={"#823ccc"}
-                      textDecoration={"underline"}
-                    >
+                    <Drawer.Title color={"#823ccc"} textDecoration={"underline"}>
                       Menu
                     </Drawer.Title>
                   </Drawer.Header>
                   <Separator mx={2} />
                   <Drawer.Body>
                     <VStack align="start" gap={5}>
-                      <NavItems bottom={"0"} />
+                      <NavItems bottom={"0"} onNavigate={() => setOpen(false)} />
                     </VStack>
                   </Drawer.Body>
                   <Drawer.CloseTrigger asChild>
@@ -122,7 +110,6 @@ export default function Navbar() {
           </Drawer.Root>
         </Flex>
       </Flex>
-      {/* <Separator color={'red'}/> */}
     </Box>
   );
 }

@@ -100,9 +100,11 @@ export default function Hero() {
           </Text>
 
           <HStack gap={4} wrap="wrap" justify={"flex-start"}>
-            <Button colorPalette="purple" borderRadius="full" px={6} size="lg">
+            <Link href={"#contact"}>
+            <Button colorPalette="purple" borderRadius="full" px={6} size="lg" >
               <FaPaperPlane /> Hire Me
             </Button>
+            </Link>
             <Button variant="outline" borderRadius="full" px={6} size="lg">
               <FaDownload /> Download Resume
             </Button>

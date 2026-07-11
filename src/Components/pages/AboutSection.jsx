@@ -159,9 +159,9 @@ export default function AboutSection() {
                     ))}
                   </SimpleGrid>
 
-                  <Button bg={"#823ccc"} color={"white"} size="sm">
+                  {/* <Button bg={"#823ccc"} color={"white"} size="sm">
                     More About Me
-                  </Button>
+                  </Button> */}
                 </Box>
               </Flex>
             </Panel>
@@ -177,18 +177,18 @@ export default function AboutSection() {
             >
               <Eyebrow>My Skills</Eyebrow>
 
-              <Heading size="xl" mb={8}>
+              <Heading size="xl" mb={6}>
                 Technologies I work with
               </Heading>
 
-              <SimpleGrid columns={{ base: 3, sm: 4, md: 5 }} gap={5}>
+              <SimpleGrid columns={{ base: 3, sm: 4, md: 5 }} gap={3}>
                 {skills.map((skill) => (
                   <Flex key={skill.name} direction="column" align="center">
                     <Flex
                       align="center"
                       justify="center"
-                      w="56px"
-                      h="56px"
+                      w="48px"
+                      h="48px"
                       borderRadius="15px"
                       border="1px solid"
                       borderColor={{

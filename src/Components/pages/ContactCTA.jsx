@@ -54,7 +54,7 @@ const ContactCTA = () => {
 
           <Button
             as="a"
-            href="mailto:kanishk@example.com"
+            href="mailto:kanishkheera@gmail.com"
             bg="white"
             color="#7B2FF7"
             _hover={{ bg: "whiteAlpha.900" }}
