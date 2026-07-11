@@ -20,12 +20,12 @@ import {
   FaArrowUp,
   FaXTwitter,
 } from "react-icons/fa6";
+import { scrollToSection } from "../utils/scrollToSections";
 
 const socialLinks = [
   { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/kanishkheera" },
   { icon: FaGithub, label: "GitHub", href: "https://github.com/kanishkheera" },
   { icon: FaXTwitter, label: "Twitter", href: "https://x.com/kanishkheera" },
-  //   { icon: FaInstagram, label: "Instagram", href: "#" },
 ];
 
 const quickLinks = [
@@ -46,10 +46,17 @@ const connectLinks = [
   { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/kanishkheera" },
   { icon: FaGithub, label: "GitHub", href: "https://github.com/kanishkheera" },
   { icon: FaXTwitter, label: "Twitter", href: "https://x.com/kanishkheera" },
-  //   { icon: FaInstagram, label: "Instagram", href: "#" },
 ];
 
 function FooterLinkList({ title, links }) {
+  const handleClick = (e, href) => {
+    // only intercept in-page anchors like "#about"; let real/external links behave normally
+    if (href.startsWith("#") && href.length > 1) {
+      e.preventDefault();
+      scrollToSection(href.slice(1));
+    }
+  };
+
   return (
     <Stack
       gap="3"
@@ -64,6 +71,7 @@ function FooterLinkList({ title, links }) {
           <Link
             key={link.label}
             href={link.href}
+            onClick={(e) => handleClick(e, link.href)}
             _hover={{ color: "#823ccc", textDecoration: "none" }}
             fontSize="sm"
           >
@@ -92,7 +100,6 @@ export default function Footer() {
       <Container maxW="1240px">
         <Grid
           templateColumns={{
-            // base: "1fr",
             base: "repeat(3, 1fr)",
             lg: "2fr 1fr 1fr 1fr",
           }}
@@ -101,7 +108,6 @@ export default function Footer() {
         >
           <GridItem
             colSpan={{
-            //   base: 1,
               base: 3,
               lg: 1,
             }}
@@ -112,10 +118,14 @@ export default function Footer() {
               textAlign={{ base: "center", lg: "left" }}
             >
               <Link
-                href="#"
+                href="#home"
                 fontSize="2xl"
                 fontWeight="bold"
                 _hover={{ textDecoration: "none" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("home");
+                }}
               >
                 <Heading fontSize={"28px"}>
                   <Span color={"#823ccc"}>K</Span>anishk
@@ -177,7 +187,7 @@ export default function Footer() {
             aria-label="Back to top"
             onClick={scrollToTop}
             variant="solid"
-            color={'white'}
+            color={"white"}
             bg="#823ccc"
             rounded="full"
             size="sm"

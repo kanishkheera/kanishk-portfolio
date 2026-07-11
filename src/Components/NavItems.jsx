@@ -1,4 +1,5 @@
 import { Link } from "@chakra-ui/react";
+import { scrollToSection } from "./utils/scrollToSections";
 
 const linkItems = [
   { id: 1, value: "Home", target: "home" },
@@ -11,11 +12,7 @@ const linkItems = [
 export default function NavItems({ bottom, onNavigate }) {
   const handleClick = (e, target) => {
     e.preventDefault();
-    const el = document.getElementById(target);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.pushState(null, "", `#${target}`); // 👈 added here
-    }
+    scrollToSection(target);
     if (onNavigate) onNavigate();
   };
 
@@ -33,9 +30,7 @@ export default function NavItems({ bottom, onNavigate }) {
           _hover={{
             color: "#823ccc",
             textDecoration: "none",
-            _after: {
-              transform: "scaleX(1)",
-            },
+            _after: { transform: "scaleX(1)" },
           }}
           _after={{
             content: '""',
