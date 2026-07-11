@@ -5,6 +5,7 @@ import Hero from "./Components/pages/Hero"
 import ProjectsSection from "./Components/pages/ProjectsSection"
 import Footer from "./Components/pages/Footer"
 import AboutSection from "./Components/pages/AboutSection"
+import ContactCTA from "./Components/pages/ContactCTA"
 
 function App() {
  
@@ -16,6 +17,8 @@ function App() {
       <ProjectsSection/>
       <Separator/>
       <AboutSection/>
+      <Separator/>
+      <ContactCTA/>
       <Separator/>
       <Footer/>
     </Box>

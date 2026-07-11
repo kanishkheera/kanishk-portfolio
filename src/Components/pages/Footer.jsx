@@ -30,8 +30,8 @@ const socialLinks = [
 
 const quickLinks = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
 ];
 

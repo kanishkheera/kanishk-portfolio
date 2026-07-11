@@ -224,6 +224,7 @@ function FloatBadge({
       color={color}
       border="1px solid"
       borderColor="whiteAlpha.200"
+      borderRadius={'15px'}
       boxShadow="0 12px 30px -8px rgba(0,0,0,0.5)"
       fontSize={{ base: "16px", md: "20px" }}
       fontWeight={fontWeight}

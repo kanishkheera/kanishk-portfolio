@@ -50,7 +50,7 @@ const skills = [
 const aboutItems = [
   { icon: FaUser, label: "Kanishk Heera" },
   { icon: FaLocationDot, label: "Agra, India" },
-  { icon: FaEnvelope, label: "kanishk@example.com" },
+  { icon: FaEnvelope, label: "kanishk@gmail.com" },
   { icon: FaBriefcase, label: "Open to Work" },
 ];
 
@@ -94,7 +94,7 @@ function AvatarIllustration() {
       w={{ base: "110px", md: "140px" }}
       h={{ base: "110px", md: "140px" }}
       flexShrink={0}
-      borderRadius="full"
+      borderRadius="25px"
       overflow="hidden"
       bg={{ base: "purple.50", _dark: "whiteAlpha.100" }}
       border="1px solid"
@@ -133,14 +133,20 @@ export default function AboutSection() {
                     Get to know me
                   </Heading>
 
-                  <Text mb={6}>
+                  <Text
+                    fontSize="md"
+                    color={{
+                      base: "gray.600",
+                      _dark: "gray.300",
+                    }}
+                  >
                     I'm a Computer Science Engineering student and a passionate
                     Frontend Developer. I love building web applications,
                     learning modern technologies, and creating responsive user
                     interfaces.
                   </Text>
 
-                  <SimpleGrid columns={2} gap={4} mb={6}>
+                  <SimpleGrid columns={{ sm: 1, md: 2 }} gap={5} my={6}>
                     {aboutItems.map((item) => (
                       <HStack
                         key={item.label}
@@ -148,7 +154,7 @@ export default function AboutSection() {
                         justify={{ base: "center", sm: "flex-start" }}
                       >
                         <Icon as={item.icon} mt={1} />
-                        <Text fontWeight="bold">{item.label}</Text>
+                        <Text fontSize={"md"}>{item.label}</Text>
                       </HStack>
                     ))}
                   </SimpleGrid>
@@ -175,7 +181,7 @@ export default function AboutSection() {
                 Technologies I work with
               </Heading>
 
-              <SimpleGrid columns={{base:3,sm:4,md:5}} gap={5}>
+              <SimpleGrid columns={{ base: 3, sm: 4, md: 5 }} gap={5}>
                 {skills.map((skill) => (
                   <Flex key={skill.name} direction="column" align="center">
                     <Flex
@@ -183,7 +189,7 @@ export default function AboutSection() {
                       justify="center"
                       w="56px"
                       h="56px"
-                      borderRadius="full"
+                      borderRadius="15px"
                       border="1px solid"
                       borderColor={{
                         base: "gray.200",
