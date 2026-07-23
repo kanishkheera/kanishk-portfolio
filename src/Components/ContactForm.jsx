@@ -112,7 +112,7 @@ export default function ContactForm() {
 
               <Textarea
                 name="message"
-                placeholder="Tell me about your project..."
+                placeholder="Write your message here..."
                 rows={4}
                 borderRadius="xl"
                 // variant="subtle"
