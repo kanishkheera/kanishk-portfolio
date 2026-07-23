@@ -6,6 +6,7 @@ import ProjectsSection from "./Components/pages/ProjectsSection"
 import Footer from "./Components/pages/Footer"
 import AboutSection from "./Components/pages/AboutSection"
 import ContactCTA from "./Components/pages/ContactCTA"
+import ContactForm from "./Components/ContactForm"
 
 function App() {
  
@@ -18,8 +19,10 @@ function App() {
       <Separator/>
       <AboutSection/>
       <Separator/>
-      <ContactCTA/>
-      <Separator/>
+      {/* <ContactCTA/>
+      <Separator/> */}
+      <ContactForm/>
+      <Separator/>  
       <Footer/>
     </Box>
   )
