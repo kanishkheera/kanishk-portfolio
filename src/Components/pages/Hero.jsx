@@ -101,12 +101,26 @@ export default function Hero() {
 
           <HStack gap={4} wrap="wrap" justify={"flex-start"}>
             <Link href={"#contact"}>
-            <Button colorPalette="purple" borderRadius="full" px={6} size="lg" >
-              <FaPaperPlane /> Hire Me
-            </Button>
+              <Button
+                colorPalette="purple"
+                borderRadius="full"
+                px={6}
+                size="lg"
+              >
+                <FaPaperPlane /> Hire Me
+              </Button>
             </Link>
-            <Button variant="outline" borderRadius="full" px={6} size="lg">
-              <FaDownload /> Download Resume
+            <Button
+              as="a"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              borderRadius="full"
+              px={6}
+              size="lg"
+            >
+              <FaDownload /> View Resume
             </Button>
           </HStack>
 
@@ -226,7 +240,7 @@ function FloatBadge({
       color={color}
       border="1px solid"
       borderColor="whiteAlpha.200"
-      borderRadius={'15px'}
+      borderRadius={"15px"}
       boxShadow="0 12px 30px -8px rgba(0,0,0,0.5)"
       fontSize={{ base: "16px", md: "20px" }}
       fontWeight={fontWeight}
