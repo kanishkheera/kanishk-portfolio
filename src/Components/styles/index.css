@@ -11,3 +11,10 @@
     background:radial-gradient(circle, rgba(124,58,237,0.16) 0%, rgba(124,58,237,0) 65%);
     pointer-events:none; z-index:0;
   }
+
+  /* Applies only to screens 767px wide or smaller */
+@media (max-width: 767px) {
+  body {
+    width: fit-content;
+  }
+}
