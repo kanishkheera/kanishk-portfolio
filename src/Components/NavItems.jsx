@@ -1,41 +1,48 @@
-import { Flex, Link } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
+import { scrollToSection } from "./utils/scrollToSections";
 
-export default function NavItems() {
-  const linkItems = [
-    { id: 1, value: "Home" },
-    { id: 2, value: "About" },
-    { id: 3, value: "Projects" },
-    { id: 4, value: "Skills" },
-    { id: 5, value: "Contact" },
-  ];
+const linkItems = [
+  { id: 1, value: "Home", target: "home" },
+  { id: 3, value: "Projects", target: "projects" },
+  { id: 2, value: "About", target: "about" },
+  { id: 4, value: "Skills", target: "skills" },
+  { id: 5, value: "Contact", target: "contact" },
+];
+
+export default function NavItems({ bottom, onNavigate }) {
+  const handleClick = (e, target) => {
+    e.preventDefault();
+    scrollToSection(target);
+    if (onNavigate) onNavigate();
+  };
+
   return (
     <>
       {linkItems.map((ele) => (
         <Link
           key={ele.id}
+          href={`#${ele.target}`}
+          onClick={(e) => handleClick(e, ele.target)}
           position="relative"
           fontSize="md"
           fontWeight="medium"
           textDecoration="none"
-          _hover={{ textDecoration: "none", color: "#823ccc" }}
+          _hover={{
+            color: "#823ccc",
+            textDecoration: "none",
+            _after: { transform: "scaleX(1)" },
+          }}
           _after={{
             content: '""',
             position: "absolute",
             left: 0,
-            bottom: "6px",
+            bottom: bottom,
             width: "100%",
             height: "2px",
             bg: "#823ccc",
             transform: "scaleX(0)",
             transformOrigin: "left",
             transition: "transform 0.3s ease",
-          }}
-          _hover={{
-            color: "#823ccc",
-            textDecoration: "none",
-            _after: {
-              transform: "scaleX(1)",
-            },
           }}
         >
           {ele.value}
